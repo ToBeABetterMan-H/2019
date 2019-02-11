@@ -1,0 +1,57 @@
+批量修改应采用事务：
+	BEGIN;
+	...
+	COMMIT;
+
+查询表结构：
+	DESC tableName;
+	eg:  MariaDB [wxh]> DESC A;
+		+---------+--------------+------+-----+---------+-------+
+		| Field   | Type         | Null | Key | Default | Extra |
+		+---------+--------------+------+-----+---------+-------+
+		| no      | int(11)      | NO   | PRI | NULL    |       |
+		| name    | varchar(30)  | YES  |     | NULL    |       |
+		| age     | int(11)      | YES  |     | NULL    |       |
+		| address | varchar(200) | YES  |     | NULL    |       |
+		+---------+--------------+------+-----+---------+-------+
+		4 rows in set (0.00 sec)
+
+	SHOW CREATE TABLE tableName;
+	eg: MariaDB [wxh]> show create table A \G;
+		*************************** 1. row ***************************
+		       Table: A
+		Create Table: CREATE TABLE `A` (
+		  `no` int(11) NOT NULL,
+		  `name` varchar(30) DEFAULT NULL,
+		  `age` int(11) DEFAULT NULL,
+		  `address` varchar(200) DEFAULT NULL,
+		  PRIMARY KEY (`no`)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='test table'
+		1 row in set (0.00 sec)
+
+增加一个字段：
+	ALTER TABLE tableName ADD COLUMN colName TYPE;
+	eg: ALTER TABLE A ADD COLUMN sex INT(11) NOT NULL DEFAULT 1;
+
+删除一个字段
+	ALTER TABLE tableName DROP COLUMN colName;
+	eg: ALTER TABLE A DROP COLUMN sex;
+
+修改一个字段的类型
+	ALTER TABLE tableName MODIFY colName TYPE;
+	eg: ALTER TABLE A MODIFY sex VARCHAR(40);
+
+修改一个字段的名称：此时一定要重新制定该字段的类型
+	ALTER TABLE A CHANGE colName newName TYPE;
+	eg: ALTER TABLE A CHANGE sex address VARCHAR(200);
+
+为表添加注释：
+	ALTER TABLE tableName COMMENT 'notes';
+	eg: ALTER TABLE A COMMENT 'test table';
+
+为字段添加注释：
+	ALTER TABLE tableName CHANGE colName newName TYPE COMMENT 'notes';
+
+调整字段顺序：
+	ALTER TABLE tableName CHANGE colName newName TYPE AFTER beforeCol;
+	eg: ALTER TABLE A CHANGE age age int(11) AFTER address;
