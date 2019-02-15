@@ -1,0 +1,316 @@
+作用
+	* 封装对象的创建
+	* 分离对象的创建和操作过程
+	* 批量管理对象的创建过程
+	* 便于程序的维护和扩展
+	* 高内聚，低耦合
+
+分类
+	* 简单工厂模式
+		他最大的优点就是在于工厂类包含了必要的逻辑判断，根据客户端的选择条件动态实例化相关的类；并没有增加程序的可读性和可扩展性。
+	* 工厂方法模式
+		他定义了用户创建对象的接口，让子类决定实例化哪一个类，工厂方法使一个类的实例化延迟到其子类。
+	* 抽象工厂模式
+		当产品有不同的系列，而不同的系列又有不同的创建方式，此时就适合用此模式。
+
+简单工厂模式
+	* 工厂模式中最简单的一种实现
+	* 对于不同产品的创建 定义一个工厂类
+	* 将产品的类型 作为参数 传入到工厂的创建函数
+	* 根据产品类型 选择不同的产品构造函数
+例子
+/* 
+ * Author: wxh
+ * Date: 20190215
+ * Decription: 设计模式之简单工厂模式
+ */
+#include <iostream>
+#include <boost/make_shared.hpp>
+
+using boost::shared_ptr;
+using namespace std;
+
+enum productType
+{
+	TypeA,
+	TypeB,
+	TypeC
+};
+
+/* 产品基类 */
+class CProductBase
+{
+public:
+	virtual void show() = 0;
+};
+
+/* A产品 */
+class CProductA : public CProductBase
+{
+public:
+	void show()
+	{
+		cout << "I'm Product A!" << endl;
+	}
+};
+
+/* B产品 */
+class CProductB : public CProductBase
+{
+public:
+	void show()
+	{
+		cout << "I'm Product B!" << endl;
+	}
+};
+
+/* C产品 */
+class CProductC : public CProductBase
+{
+public:
+	void show()
+	{
+		cout << "I'm Product C!" << endl;
+	}
+};
+
+/* 工厂类 */
+class CFactory
+{
+public:
+	boost::shared_ptr<CProductBase> createProduct(productType type)
+	{
+		switch(type)
+		{
+			case productType::TypeA:
+				return boost::make_shared<CProductA>();
+			case productType::TypeB:
+				return boost::make_shared<CProductB>();
+			case productType::TypeC:
+				return boost::make_shared<CProductC>();
+			default:
+				return nullptr;
+		}
+	}
+};
+
+int main()
+{
+	CFactory factory;
+	boost::shared_ptr<CProductBase> productA = factory.createProduct(productType::TypeA); 
+	boost::shared_ptr<CProductBase> productB = factory.createProduct(productType::TypeB); 
+	boost::shared_ptr<CProductBase> productC = factory.createProduct(productType::TypeC); 
+	
+	productA->show();
+	productB->show();
+	productC->show();	
+
+	return 0;
+}
+
+
+工厂方法模式
+	* 定义一个产品基类，不同的产品继承于产品基类
+	* 定义一个工厂基类，不同的工厂用户生成不同的产品
+例子
+/* 
+ * Author: wxh
+ * Date: 20190215
+ * Decription: 设计模式之工厂方法模式
+ */
+#include <iostream>
+#include <boost/make_shared.hpp>
+
+using boost::shared_ptr;
+using namespace std;
+
+/* 产品基类 */
+class CProductBase
+{
+public:
+	virtual void show() = 0;
+};
+
+/* A产品 */
+class CProductA : public CProductBase
+{
+public:
+	void show()
+	{
+		cout << "I'm Product A!" << endl;
+	}
+};
+
+/* B产品 */
+class CProductB : public CProductBase
+{
+public:
+	void show()
+	{
+		cout << "I'm Product B!" << endl;
+	}
+};
+
+/* 工厂基类 */
+class CFactoryBase
+{
+public:
+	virtual boost::shared_ptr<CProductBase> createProduct() = 0;
+};
+
+/* A工厂 */
+class CFactoryA : public CFactoryBase
+{
+public:
+	boost::shared_ptr<CProductBase> createProduct()
+	{
+		return boost::make_shared<CProductA>();
+	};
+};
+
+/* B工厂 */
+class CFactoryB : public CFactoryBase
+{
+public:
+	boost::shared_ptr<CProductBase> createProduct()
+	{
+		return boost::make_shared<CProductB>();
+	};
+};
+
+int main()
+{
+	boost::shared_ptr<CFactoryBase> factoryA = boost::make_shared<CFactoryA>();
+	boost::shared_ptr<CFactoryBase> factoryB = boost::make_shared<CFactoryB>();
+	
+	boost::shared_ptr<CProductBase> productA = factoryA->createProduct();
+	boost::shared_ptr<CProductBase> productB = factoryB->createProduct();
+
+	productA->show();
+	productB->show();
+
+	return 0;
+}
+
+抽象工厂模式
+	* 多类产品，每类产品多型号
+	* 定义一个工厂基类，每个工厂生产一种型号的多类产品
+例子
+/* 
+ * Author: wxh
+ * Date: 20190215
+ * Decription: 设计模式之抽象工厂模式
+ */
+#include <iostream>
+#include <boost/make_shared.hpp>
+
+using boost::shared_ptr;
+using namespace std;
+
+/* A类产品基类 */
+class CProductABase
+{
+public:
+	virtual void show() = 0;
+};
+
+/* A类产品 level one */
+class CProductALevelOne : public CProductABase
+{
+public:
+	void show()
+	{
+		cout << "I'm Product A level one !" << endl;
+	}
+};
+
+/* A类产品 level two */
+class CProductALevelTwo : public CProductABase
+{
+public:
+	void show()
+	{
+		cout << "I'm Product A level two !" << endl;
+	}
+};
+
+/* B类产品基类 */
+class CProductBBase
+{
+public:
+	virtual void show() = 0;
+};
+
+/* B类产品 level one */
+class CProductBLevelOne : public CProductBBase
+{
+public:
+	void show()
+	{
+		cout << "I'm Product B level one !" << endl;
+	}
+};
+
+/* B类产品 level two */
+class CProductBLevelTwo : public CProductBBase
+{
+public:
+	void show()
+	{
+		cout << "I'm Product B level two !" << endl;
+	}
+};
+
+/* 工厂基类 */
+class CFatoryBase
+{
+public:
+	virtual boost::shared_ptr<CProductABase> createProductA() = 0;
+	virtual boost::shared_ptr<CProductBBase> createProductB() = 0;
+};
+
+/* 生产 level one 产品 */
+class CFatoryLevelOne : public CFatoryBase
+{
+public:
+	boost::shared_ptr<CProductABase> createProductA()
+	{
+		return boost::make_shared<CProductALevelOne>();
+	}
+	boost::shared_ptr<CProductBBase> createProductB()
+	{
+		return boost::make_shared<CProductBLevelOne>();
+	}
+};
+
+/* 生产 level two 产品 */
+class CFatoryLevelTwo : public CFatoryBase
+{
+public:
+	boost::shared_ptr<CProductABase> createProductA()
+	{
+		return boost::make_shared<CProductALevelTwo>();
+	}
+	boost::shared_ptr<CProductBBase> createProductB()
+	{
+		return boost::make_shared<CProductBLevelTwo>();
+	}
+};
+
+int main()
+{
+	boost::shared_ptr<CFatoryBase> fatoryLevelOne = boost::make_shared<CFatoryLevelOne>();
+	boost::shared_ptr<CFatoryBase> fatoryLevelTwo = boost::make_shared<CFatoryLevelTwo>();
+
+	boost::shared_ptr<CProductABase> productALevelOne = fatoryLevelOne->createProductA();
+	boost::shared_ptr<CProductBBase> productBLevelOne = fatoryLevelOne->createProductB();
+	productALevelOne->show();
+	productBLevelOne->show();
+
+	boost::shared_ptr<CProductABase> productALevelTwo = fatoryLevelTwo->createProductA();	
+	boost::shared_ptr<CProductBBase> productBLevelTwo = fatoryLevelTwo->createProductB();
+	productALevelTwo->show();
+	productBLevelTwo->show();
+
+	return 0;
+}
