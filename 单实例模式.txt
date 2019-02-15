@@ -1,0 +1,64 @@
+作用
+	保证一个类只有一个对象实例；提供一个访问它的全局访问点。
+
+应用
+	常用于管理资源，如日志、线程。
+
+实现
+	1 将构造函数的访问权限标记为 "private"
+	2 将拷贝构造函数的访问权限标记为 "private" 或在其声明后接一个 "=delete" （属于c++11）
+	3 赋值运算符 "=" 标记为 "private"
+	4 提供一个全局访问点 "static"
+	5 唯一对象实例应标记为 "static"
+
+例子
+/* 
+ * Author: wxh
+ * Date: 20190215
+ * Decription: 设计模式之单实例模式
+ */
+#include <iostream>
+
+using namespace std;
+
+class CSingleInstance
+{
+public:
+	/* 全局访问点 */
+	static CSingleInstance* getInstance()
+	{
+		static CSingleInstance *g_single = new CSingleInstance();
+		return g_single;
+	}
+
+	void printValue()
+	{
+		std::cout << "m_value = " << m_value << std::endl;
+	}
+	void setValue(int value)
+	{
+		m_value = value;
+	}
+
+private:
+	CSingleInstance()
+	{
+		m_value = 0;
+	}
+	CSingleInstance(CSingleInstance const &singleInstance);
+	CSingleInstance& operator = (CSingleInstance const &singleInstance);
+
+private:
+	int m_value;
+};
+
+int main()
+{
+	CSingleInstance::getInstance();
+
+	CSingleInstance::getInstance()->printValue();
+	CSingleInstance::getInstance()->setValue(3);
+	CSingleInstance::getInstance()->printValue();
+
+	return 0;
+}
