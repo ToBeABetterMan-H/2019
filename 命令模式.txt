@@ -1,0 +1,109 @@
+定义
+	* 命令模式将 request 封装成对象
+	* 命令模式把发出命令的责任和执行命令的责任分隔开，委派给不同的对象
+	* 允许请求的一方和发送的一方独立开来，使得请求的一方不必知道接收请求的一方的接口，更不必知道请求时怎么被接收，以操作是否执行，何时被执行以及怎么被执行的
+	* 当需要将发出请求对象和执行请求的对象解耦时，使用命令模式
+	* 支持命令的撤销
+
+
+实现
+	* 执行类
+	* 抽象命令类基类
+	* 多个具体命令类，将动作和接受者封装在一起，只暴露一个 execute() 方法
+	* 遥控器类，客户端将命令传给此类
+
+例子
+/* 
+ * Author: wxh
+ * Date: 20190215
+ * Decription: 设计模式之命令模式
+ */
+#include <iostream>
+#include <boost/make_shared.hpp>
+
+using boost::shared_ptr;
+
+/* 电灯类（执行类） */
+class CLight
+{
+public:
+	void turnOn()
+	{
+		std::cout << "Light On " << std::endl;
+	}
+	void turnOff()
+	{
+		std::cout << "Light Off " << std::endl;
+	}
+};
+
+/* 命令类 */
+class CCommandBase
+{
+public:
+	virtual void execute() = 0;
+};
+class CCommandOn : public CCommandBase
+{
+public:
+	CCommandOn(boost::shared_ptr<CLight> light)
+	{
+		m_pLight = light;
+	}
+	void execute()
+	{
+		m_pLight->turnOn();
+	}
+private:
+	boost::shared_ptr<CLight> m_pLight;
+};
+class CCommandOff : public CCommandBase
+{
+public:
+	CCommandOff(boost::shared_ptr<CLight> light)
+	{
+		m_pLight = light;
+	}
+	void execute()
+	{
+		m_pLight->turnOff();
+	}
+private:
+	boost::shared_ptr<CLight> m_pLight;
+};
+
+/* 遥控器类 */
+class CControl
+{
+public:
+	void setCommand(boost::shared_ptr<CCommandBase> command)
+	{
+		m_pCommand = command;
+	}
+	void touchButton()
+	{
+		m_pCommand->execute();
+	}
+private:
+	boost::shared_ptr<CCommandBase> m_pCommand;
+};
+
+int main()
+{
+	/* 创建一个遥控器 */
+	boost::shared_ptr<CControl> pControl = boost::make_shared<CControl>();
+
+	/* 开/关灯命令 */
+	boost::shared_ptr<CCommandBase> pTurnOn = boost::make_shared<CCommandOn>(boost::make_shared<CLight>());
+	boost::shared_ptr<CCommandBase> pTurnOff = boost::make_shared<CCommandOff>(boost::make_shared<CLight>());
+
+	// /* 执行开灯命令 */
+	pControl->setCommand(pTurnOn);
+	pControl->touchButton();
+
+	// /* 执行关灯命令 */
+	pControl->setCommand(pTurnOff);
+	pControl->touchButton();
+
+	return 0;
+}
