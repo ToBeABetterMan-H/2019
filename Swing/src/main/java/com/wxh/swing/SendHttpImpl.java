@@ -144,13 +144,13 @@ public class SendHttpImpl {
 			// 拼接字符串，得到完整的URL
 			switch (type) {
 			case 1:
-				client.setUrl(MyString.URL_BUSS + funcName);
+				client.setUrl(MyString.getURL_BUSS() + funcName);
 				break;
 			case 2:
-				client.setUrl(MyString.URL_DOCIF + funcName);
+				client.setUrl(MyString.getURL_DOCIF() + funcName);
 				break;
 			case 3:
-				client.setUrl(MyString.URL_WORKFLOW + funcName);
+				client.setUrl(MyString.getURL_WORKFLOW() + funcName);
 				break;
 			default:
 				return MyString.FAILED;

@@ -131,6 +131,9 @@ public class FirstJFrame extends JFrame {
 				jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 				jfc.showDialog(new JLabel(), "选择");
 				File file = jfc.getSelectedFile();
+				if(file == null) {
+					return;
+				}
 				if (file.isDirectory()) {
 					System.out.println("文件夹:" + file.getAbsolutePath());
 				} else if (file.isFile()) {
