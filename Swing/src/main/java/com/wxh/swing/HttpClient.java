@@ -72,17 +72,17 @@ public class HttpClient {
 		 * System.out.println(response.getStatusLine().getStatusCode());
 		 */
 
-		// 4.获取响应的实体内容，就是我们所要抓取得网页内容
-		HttpEntity entity = response.getEntity();
-
-		// 5.获取放回结果
-		if (entity != null) {
-			result = EntityUtils.toString(entity, "utf-8");
-		}
-		EntityUtils.consume(entity);
-
 		if (response != null) {
+			// 4.获取响应的实体内容，就是我们所要抓取得网页内容
+			HttpEntity entity = response.getEntity();
+
+			// 5.获取放回结果
+			if (entity != null) {
+				result = EntityUtils.toString(entity, "utf-8");
+				EntityUtils.consume(entity);
+			}			
 			response.close();
+			return result;
 		}
 
 		return result;
@@ -113,17 +113,17 @@ public class HttpClient {
 		 * System.out.println(response.getStatusLine().getStatusCode());
 		 */
 
-		// 4.获取响应的实体内容，就是我们所要抓取得网页内容
-		HttpEntity entity = response.getEntity();
-
-		// 5.获取放回结果
-		if (entity != null) {
-			result = EntityUtils.toString(entity, "utf-8");
-		}
-		EntityUtils.consume(entity);
-
 		if (response != null) {
+			// 4.获取响应的实体内容，就是我们所要抓取得网页内容
+			HttpEntity entity = response.getEntity();
+
+			// 5.获取放回结果
+			if (entity != null) {
+				result = EntityUtils.toString(entity, "utf-8");
+				EntityUtils.consume(entity);
+			}			
 			response.close();
+			return result;
 		}
 
 		return result;
