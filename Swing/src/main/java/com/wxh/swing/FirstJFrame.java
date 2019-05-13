@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.IOException;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -16,6 +17,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import com.wxh.swing.panel.PInterface;
+import com.wxh.swing.utils.CharaccterOperate;
 
 @SuppressWarnings("serial")
 public class FirstJFrame extends JFrame {
@@ -64,6 +66,13 @@ public class FirstJFrame extends JFrame {
 		setBounds(450, 200, 400, 300);
 		this.setContentPane(mainPanel);
 		this.setTitle("CSSMIS测试");
+		
+		try {
+			CharaccterOperate.updXLSX();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		addMenu();
 	}
