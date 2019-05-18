@@ -98,6 +98,7 @@ public class PInterface extends JPanel implements ActionListener {
 	}
 
 	/** model 1 */
+	@SuppressWarnings("unused")
 	private void autoCreateButtons() {
 		showRequest = new JTextArea();
 		showRequest.setBounds(60, 505, 1320, 60);
