@@ -30,11 +30,11 @@ public class MyString {
 	public static String URL_WORKFLOW = "http://" + IP_CSS + ":" + PORT_CSS + "/CSSMIS/api/wf/";
 	public static String URL_DOCIF = "http://" + IP_CSS + ":" + PORT_CSS + "/CSSMIS/api/docif/";
 	/** 请求参数文件路径_BUSS */
-	public static final String PATH_REQUEST_BUSS = "F:\\2019\\wxh\\测试用例\\20190430-批量测试\\Request_buss.txt";
+	public static final String PATH_REQUEST_BUSS = "src/main/resources/testCase/Request_buss.txt";
 	/** 请求参数文件路径_DOCIF */
-	public static final String PATH_REQUEST_DOCIF = "F:\\2019\\wxh\\测试用例\\20190430-批量测试\\Request_docif.txt";
+	public static final String PATH_REQUEST_DOCIF = "src/main/resources/testCase/Request_docif.txt";
 	/** 请求参数文件路径_WORKFLOW */
-	public static final String PATH_REQUEST_WORKFLOW = "F:\\2019\\wxh\\测试用例\\20190430-批量测试\\Request_workflow.txt";
+	public static final String PATH_REQUEST_WORKFLOW = "src/main/resources/testCase/Request_workflow.txt";
 	public static String getURL_BUSS() {
 		return "http://" + IP_CSS + ":" + PORT_CSS + "/CSSMIS/api/buss/";
 	}
@@ -43,5 +43,6 @@ public class MyString {
 	}
 	public static String getURL_DOCIF() {
 		return "http://" + IP_CSS + ":" + PORT_CSS + "/CSSMIS/api/docif/";
-	}
+	}	
+	
 }

@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
-
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,13 +14,20 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.wxh.swing.panel.PExcel;
 import com.wxh.swing.panel.PInterface;
 
 @SuppressWarnings("serial")
 public class FirstJFrame extends JFrame {
+	@SuppressWarnings("unused")
+	private static Logger logger = LogManager.getLogger();
 
 	private PInterface pbuss;
 	private PInterface pdocif;
+	private PExcel pexcel;
+	
 	private PInterface pworkflow;
 	private CardLayout cardLayout;
 	private JPanel mainPanel;
@@ -30,10 +36,12 @@ public class FirstJFrame extends JFrame {
 		pbuss = new PInterface(MyString.PATH_REQUEST_BUSS, 1);
 		pdocif = new PInterface(MyString.PATH_REQUEST_DOCIF, 2);
 		pworkflow = new PInterface(MyString.PATH_REQUEST_WORKFLOW, 3);
+		pexcel = new PExcel();
 
 		cardLayout = new CardLayout();
 		mainPanel = new JPanel(cardLayout);
 
+		mainPanel.add(pexcel, "Excel");
 		mainPanel.add(pbuss, "buss");
 		mainPanel.add(pdocif, "docif");
 		mainPanel.add(pworkflow, "workflow");
@@ -42,29 +50,20 @@ public class FirstJFrame extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FirstJFrame frame = new FirstJFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		
+//	}
 
 	/**
 	 * Create the frame.
 	 */
 	public FirstJFrame() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setExtendedState(JFrame.MAXIMIZED_BOTH); // maximize window
 		setBounds(450, 200, 400, 300);
 		this.setContentPane(mainPanel);
 		this.setTitle("CSSMIS测试");
-
 		addMenu();
 	}
 
@@ -91,6 +90,8 @@ public class FirstJFrame extends JFrame {
 		docifMenuItem.setActionCommand("docif");
 		JMenuItem workflowMenuItem = new JMenuItem("workflow");
 		workflowMenuItem.setActionCommand("workflow");
+		JMenuItem excelMenuItem = new JMenuItem("Excel");
+		excelMenuItem.setActionCommand("Excel");
 
 		MenuItemListener menuItemListener = new MenuItemListener();
 
@@ -99,6 +100,7 @@ public class FirstJFrame extends JFrame {
 		bussMenuItem.addActionListener(menuItemListener);
 		docifMenuItem.addActionListener(menuItemListener);
 		workflowMenuItem.addActionListener(menuItemListener);
+		excelMenuItem.addActionListener(menuItemListener);
 
 		// 4.add menu items to menus
 //		fileMenu.add(newMenuItem);
@@ -110,6 +112,8 @@ public class FirstJFrame extends JFrame {
 		interfaceMenu.add(docifMenuItem);
 		interfaceMenu.addSeparator();
 		interfaceMenu.add(workflowMenuItem);
+		interfaceMenu.addSeparator();
+		interfaceMenu.add(excelMenuItem);
 
 		// 5.add menu to menuBar
 		menuBar.add(fileMenu);

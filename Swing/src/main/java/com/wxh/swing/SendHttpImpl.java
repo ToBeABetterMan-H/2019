@@ -10,11 +10,14 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import com.wxh.swing.common.MyError;
 import com.wxh.swing.common.MyException;
 
 public class SendHttpImpl {
+	
+	private static Logger logger = LogManager.getLogger();
 
 	private HttpClient client;
 
@@ -42,6 +45,7 @@ public class SendHttpImpl {
 					filePath = MyString.PATH_REQUEST_WORKFLOW;
 					break;
 				default:
+					logger.error("Error type: " + type + MyString.BLANK_FOUR + "Error type: 1.buss 2.docif 3.workflow");
 					return "Error type: 1.buss 2.docif 3.workflow";
 				}
 			}
@@ -161,16 +165,9 @@ public class SendHttpImpl {
 			} else
 				data = client.post(request);
 
-			String status = data.substring(data.lastIndexOf("\"status\":"), data.lastIndexOf("}"));
-			System.out.println(status);
-			if (!status.equals("\"status\":0")) {
-				throw new MyException(MyError.RemoteError,
-						"request: " + request.toString() + MyString.ENTER + funcName + MyString.BLANK + data);
-			}
-
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			data = df.format(new Date()) + MyString.SPACE + funcName + MyString.ENTER + data + MyString.ENTER;
-			FileIO.insertFile(MyString.BLANK, filePath.replace(".txt", "_result.txt"), data + MyString.ENTER);
+			logger.info(data + MyString.ENTER);
 			return "request: " + request.toString() + MyString.ENTER + "response: " + data;
 		} catch (SocketTimeoutException e) {
 			// TODO Auto-generated catch block

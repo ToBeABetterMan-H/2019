@@ -1,0 +1,275 @@
+GetApplyProjectInfo
+	dcPK=项目主键
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=更新时间：格式：（开始时间，结束时间）例："updateTime": "2019-04-09 16:56:58,2019-04-10 16:56:58"
+	status=1
+
+UpdProjectInstallInfo
+	declareRemark=申报备注
+	declareDate=2019-05-05 15:50:32
+	installRemark=安装备注
+	corpName=申报施工单位名称
+	corpCode=申报施工单位组织机构代码
+	prjName=项目名称
+	provincePrjNum=项目省代码，审核通过的才有数据
+	dcPK=申报Id
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proId=项目主键
+	actualInstallDate=2019-05-05 15:50:32
+	serviceOperator=服务运营商取值为1、2、3：1：电信、2：移动、3：联通
+
+AddSubProjectBindDevice
+	provincePrjNum=项目省代码
+	devId=设备编号
+	itemId=单位工程ID
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proId=项目主键
+
+UpdSubProjectBindDevice
+	sourceId=来源系统主键，网关生成
+	provincePrjNum=项目省代码
+	devId=设备编号
+	itemId=单位工程ID
+	UserName=VSAP用户名
+	dcPK=业务主键
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proId=项目主键
+
+DelSubProjectBindDevice
+	sourceId=来源系统主键，网关生成
+	dcPK=业务主键
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+
+GetSubProjectBindDeviceSpecial
+	dcPK=主键
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=更新时间：格式：（开始时间，结束时间）例："updateTime": "2019-04-09 16:56:58,2019-04-10 16:56:58"
+	status=1
+
+GetSubProjectBindDevice
+	dcPK=主键
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=更新时间：格式：（开始时间，结束时间）例："updateTime": "2019-04-09 16:56:58,2019-04-10 16:56:58"
+	status=1
+
+UpdProjectMaintainInfo
+	devId=设备编号
+	reason=故障原因
+	actualMaintainDate=2019-05-05 15:50:32
+	maintainRemark=报修备注
+	corpName=施工单位名称
+	maintainDescribe=维护说明
+	maintainDate=2019-05-05 15:50:32
+	corpCode=施工单位组织机构代码
+	prjName=项目名称
+	provincePrjNum=项目省代码
+	dcPK=业务主键
+	operatorFileUrl=
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proId=项目主键
+	serviceOperator=服务运营商
+
+UpdProjectPauseInfo
+	devId=设备编号
+	declareRemark=申请备注
+	actualPauseDate=2019-05-05 15:50:32
+	pauseRemark=暂停备注
+	pauseDeclareDate=2019-05-05 15:50:32
+	corpName=施工单位名称
+	corpCode=施工单位组织机构代码
+	passDate=2019-05-05 15:50:32
+	prjName=项目名称
+	provincePrjNum=项目省代码
+	dcPK=业务主键
+	operatorFileUrl=运营商文件
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proId=监管系统项目主键
+	serviceOperator=服务运营商
+
+UpdProjectRecoverInfo
+	devId=设备编号
+	declareRemark=恢复申请备注
+	recoverDeclareDate=2019-05-05 15:50:32
+	corpName=施工单位名称
+	corpCode=施工单位组织机构代码
+	passDate=2019-05-05 15:50:32
+	prjName=项目名称
+	provincePrjNum=项目省代码
+	recoverRemark=恢复备注
+	dcPK=业务主键
+	operatorFileUrl=运营商文件
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proId=监管系统项目主键
+	serviceOperator=1
+	actualRecoverDate=2019-05-05 15:50:32
+
+UpdProjectRemoveInfo
+	devId=设备编号，多个用逗号间隔
+	removeDescribe=拆除说明
+	corpName=施工单位名称
+	corpCode=施工单位组织机构代码
+	prjName=项目名称
+	provincePrjNum=项目省代码
+	agreeRemoveDate=2019-05-05 15:50:32
+	actualRemoveDate=2019-05-05 15:50:32
+	removeDeclareDate=2019-05-05 15:50:32
+	removeRemark=拆除备注
+	planRemoveDate=2019-05-05 15:50:32
+	dcPK=业务主键
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proId=监管系统项目主键
+	serviceOperator=1
+
+AddFullViewSurveyCamerar
+	levelAngle=12.34
+	devPlayConfig=全景成像测量摄像机设备运行参数配置Xml格式：<xml>。。。</xml>
+	highDev=12.34
+	opticalFrequency2 =12.34
+	detectProId=远程监控系统项目主键
+	corpCode=申报施工单位组织机构代码
+	ExtProperty=扩展属性
+	laserIntensity=12.34
+	devUnitType=设备型号
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	devDateStartUse=2019-05-05 15:50:32
+	devDateUninstall=2019-05-05 15:50:32
+	devId=设备编号：有值为更新，无值为新增
+	lngTargeted=12.34
+	laserRangingType=激光测距型号(安全型激光)
+	devInstalPlace=安装位置
+	opticalFrequency1 =12.34
+	highTargeted=12.34
+	opticalFrequency3 =12.34
+	corpName=申报施工单位名称
+	devName=设备名称
+	latDev=12.34
+	obd=12.34
+	provincePrjNum=项目省代码
+	verticalAngle=12.34
+	devFlowState=流程状态
+	proId=项目主键
+	lngDev=12.34
+	latTargeted=12.34
+
+AddGeneralCamerar
+	devId=设备编号：有值为更新，无值为新增
+	devType=设备类型【2:加工场摄像机           3:大门出入口摄像机           5:塔式起重机超视野摄像机】
+	devPlayConfig=摄像机设备运行参数配置Xml格式：<xml>。。。</xml>
+	devInstalPlace=安装位置
+	detectProId=远程监控系统项目主键
+	corpName=施工单位名称
+	devName=设备名称
+	corpCode=施工单位组织机构代码
+	ExtProperty=扩展属性
+	devUnitType=设备型号
+	provincePrjNum=项目省代码
+	devFlowState=流程状态
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proId=工程编号
+	devDateStartUse=2019-05-05 15:50:32
+	devDateUninstall=2019-05-05 15:50:32
+
+AddEnvironmentalScanningDevice
+	devId=设备编号：有值为更新，无值为新增
+	devPlayConfig=环境侦测预警联动设备运行参数配置Xml格式：<xml>。。。</xml>
+	devInstalPlace=安装位置
+	detectProId=远程监控系统项目主键
+	corpName=施工单位名称
+	devName=设备名称
+	corpCode=施工单位组织机构代码
+	ExtProperty=扩展属性
+	devUnitType=设备型号
+	provincePrjNum=项目省代码
+	devFlowState=流程状态
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proId=工程编号
+	devDateStartUse=2019-05-05 15:50:32
+	devDateUninstall=2019-05-05 15:50:32
+
+AddOperatorAIDetectDevice
+	devId=设备编号：有值为更新，无值为新增
+	devPlayConfig=吊装设备操作员智能识别设备运行参数配置Xml格式：<xml>。。。</xml>
+	devInstalPlace=安装位置
+	detectProId=远程监控系统项目主键
+	corpName=施工单位名称
+	devName=设备名称
+	corpCode=施工单位组织机构代码
+	ExtProperty=扩展属性
+	devUnitType=设备型号
+	provincePrjNum=项目省代码
+	devFlowState=流程状态
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proId=工程编号
+	devDateStartUse=2019-05-05 15:50:32
+	devDateUninstall=2019-05-05 15:50:32
+
+UpdDeviceOperatorLog
+	devId=设备Id
+	oprDcPK=互联互通业务Id
+	dcPK=互联互通主键
+	endDate=2019-05-05 15:50:32
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	staDate=2019-05-05 15:50:32
+	remark=备注
+	oprType=业务类型
+	oprId=监管系统id
+
+GetDeviceOperatorLog
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	oprType=业务类型
+	oprId=监管系统id
+	status=状态1:新增，2:更新，4：删除
+
+AddDeviceStatInfo
+	UserID=当前用户UUID
+	proId=项目id
+	badEnvironmentalDevId=故障的设备id，多个逗号间隔
+	badDevId=故障的设备id，多个逗号间隔
+	videoEnvironmentalStatus=项目的环境侦测设备的故障状态
+	videoStatus=项目的所有设备的故障状态
+
+UpdDeviceStatInfo
+	sourceId=
+	dcPK=业务主键
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	badEnvironmentalDevId=故障的设备id，多个逗号间隔
+	badDevId=故障的设备id，多个逗号间隔
+	videoEnvironmentalStatus=项目的环境侦测设备的故障状态
+	videoStatus=项目的所有设备的故障状态
+
+GetDeviceStatInfo
+	dcPK=主键
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=更新时间：格式：（开始时间，结束时间）例："updateTime": "2019-04-09 16:56:58,2019-04-10 16:56:58"
+	status=1
+
+GetProjectInstallDevice
+	dcPK=主键
+	UserID=当前用户UUID
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=更新时间：格式：（开始时间，结束时间）例："updateTime": "2019-04-09 16:56:58,2019-04-10 16:56:58"
+	status=1

@@ -1,0 +1,967 @@
+Login
+登录
+	UserName=wxh
+	TelPhone=
+	CheckNum=
+	Password=654321
+
+Logout
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+GetCheckNum
+	Type=Regist
+	PhoneNum=18760005514
+	UserID=
+
+GetRoleDefine
+	RoleName=
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	CreateUserID=
+
+AddRoleDefine
+	RoleName=亚洲舞王2
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	RoleDesc=尼古拉斯.赵四
+
+UpdRoleDefine
+	RoleName=
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	RoleDesc=尼古拉斯.赵四.阿财
+	RoleID=43dcaef95c26469e8f9f1acb591b8b8e
+
+GetAuthorizableRole
+	DestUserID=
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	CreateUserID=
+
+GetUserRole
+	DestUserID=d0d4667ea1c746bc9628db54e8d32b7c
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+AuthRole
+	DestUserID=d0d4667ea1c746bc9628db54e8d32b7c
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	RoleIDs=43dcaef95c26469e8f9f1acb591b8b8e
+	Operation=1
+
+GetUser
+	OrgID=
+	OfficePhone=
+	DestUserID=
+	UserName=
+	Email=
+	UserID=d0d4667ea1c746bc9628db54e8d32b7c
+	Sex=
+	TelPhone=
+	RealName=
+	IsCheck=
+	Operation=
+	RoleID=
+
+AddUser
+	OrgID=4c688383575644ffbc18cc1117e8bb90
+	OfficePhone=办公电话
+	UserName=林文财
+	Email=123456789@qq.com
+	UserID=d0d4667ea1c746bc9628db54e8d32b7c
+	Sex=1
+	TelPhone=12345678911
+	RealName=林文财
+	IsCheck=1
+	Password=123456
+
+UpdUser
+	OrgID=4c688383575644ffbc18cc1117e8bb90
+	OfficePhone=18760005515
+	DestUserID=d0d4667ea1c746bc9628db54e8d32b7c
+	Email=1040482147@qq.com
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	Sex=1
+	TelPhone=18760005514
+	RealName=林文财
+	IsCheck=1
+	Password=654321
+
+DelUser
+	DestUserID=2db90cf56b4e46e2b859f9074f79bcdc
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+GetApplication
+	ApplicationName=应用名称
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+UpdApplication
+	ApplicationName=应用名称
+	ApplicationDesc=应用描述
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ApplicationID=应用ID
+
+GetMenu
+	MenuName=菜单名称
+	IsLeaf=1
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ActivityID=活动ID
+	ProcessID=流程ID
+	ApplicationID=应用UUID
+	IsVisible=1
+	ParentMenuID=父菜单ID
+
+AddMenu
+	MenuOrder=1
+	MenuName=业务流程
+	MenuIcon=菜单图标URL
+	IsLeaf=1
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ActivityID=活动ID
+	ProcessID=流程ID
+	FormID=1
+	ApplicationID=应用ID
+	MenuUrl=菜单URL
+	IsVisible=1
+	ParentMenuID=父菜单ID
+
+UpdMenu
+	MenuOrder=1
+	MenuName=菜单名称
+	MenuIcon=菜单图标URL
+	MenuID=菜单ID
+	IsLeaf=1
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ActivityID=活动ID
+	ProcessID=流程ID
+	FormID=1
+	MenuUrl=菜单URL
+	IsVisible=1
+	ParentMenuID=父菜单ID
+
+DelMenu
+	MenuID=菜单ID（后台自动级联删除）
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+GetButton
+	ButtonName=按钮名称
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ButtonType=1
+
+AddButton
+	ButtonIcon=按钮图标URL
+	ButtonName=按钮名称
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ButtonType=1
+
+UpdButton
+	ButtonIcon=按钮图标URL
+	ButtonID=按钮ID
+	ButtonName=按钮名称
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ButtonType=1
+
+DelButton
+	ButtonID=按钮ID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+GetMenuRefButton
+	MenuName=菜单名称
+	MenuID=菜单ID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+AddMenuRefButton
+	SeqNo=1
+	MenuID=菜单ID
+	ButtonID=按钮ID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	BussIF=业务接口
+	Params=Json参数列表
+	Route=路由
+
+UpdMenuRefButton
+	MenuBtnID=菜单关联按钮ID
+	SeqNo=1
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	BussIF=业务接口
+	Params=Json参数列表
+	Route=路由
+
+DelMenuRefButton
+	MenuBtnID=菜单关联按钮ID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+GetAcl
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	CtrlObjValue=控制对象值fc3710665a9f11e9b036f832e4702fe0角色ID
+	CtrlDestType=1
+	CtrlObjType=1
+	CtrlDestValue=控制目标值菜单ID菜单关联按钮ID
+
+SetAcl
+	CtrlOperation=1
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	CtrlObjValue=d0d4667ea1c746bc9628db54e8d32b7c
+	CtrlDestType=1
+	CtrlObjType=1
+	CtrlDestValue=5b6fd676413047d396bf339f3e2a3996
+
+GetUserLog
+	DestUserID=查询目标用户
+	FunName=接口功能名称
+	EndTime=2019-05-05 15:50:32
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	StartTime=2019-05-05 15:50:32
+
+GetProvince
+	ProvinceID=省份邮编
+	Province=省份名称
+
+GetCity
+	ProvinceID=省份邮编
+	CityID=市邮编
+	City=市名称
+
+GetArea
+	Area=区县名称
+	CityID=市邮编
+	AreaID=区县邮编
+
+GetOrgInfo
+	OrgID=机构ID
+	OrgCode=机构代码（统一社会信用代码）
+	OfficePhone=机构办公电话
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OrgType=机构类型,查询时指定单个类型
+	OrgName=机构名称
+	OrgProvince=1
+	OrgAddress=机构地址
+	OrgArea=1
+	OrgCity=1
+
+AddOrgInfo
+	OrgCode=81150000MC09037991
+	OfficePhone=18760005514
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OrgType=3
+	OrgName=住建厅
+	OrgProvince=1
+	OrgAddress=福建省福州市
+	OrgArea=1
+	OrgCity=1
+
+UpdOrgInfo
+	OrgID=机构UUID
+	OrgCode=机构代码（统一社会信用代码）
+	OfficePhone=办公电话
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OrgType=2
+	OrgName=机构名称
+	OrgProvince=1
+	OrgAddress=机构地址
+	OrgArea=1
+	OrgCity=1
+
+DelOrgInfo
+	OrgID=机构UUID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+GetOrgExtInfo
+	LPDuty=总经理
+	OrgRegType=有限责任公司有限责任公司
+	EndSLValidTo=2019-05-05 15:50:32
+	BussLicCode=91350503315776321E
+	LPCode=法定代表人证件号码
+	EndEstablishDate=2019-05-05 15:50:32
+	StartEstablishDate=2019-05-05 15:50:32
+	OrgID=机构UUID
+	SecurityLicCode=(闽)JZ安许证字[2018]FZ0383
+	LPName=法定代表人姓名
+	PSLValidCode=主要负责人安全生产许可证编号
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	LPJobTitle=工程师
+	StartSLValidTo=2019-05-05 15:50:32
+
+AddOrgExtInfo
+	ContactOfficePhone=联系人办公电话
+	LPDuty=法人代表
+	OrgRegType=有限责任公司有限责任公司
+	BussLicCode=91350503315776321E
+	LPCodeType=1
+	LPCode=123456789
+	RegCapitalType=1
+	EstablishDate=2019-05-05 15:50:32
+	OrgURL=企业网址
+	PaidInCapital=12.34
+	OrgID=4c688383575644ffbc18cc1117e8bb90
+	Desc=备注
+	SecurityLicCode=(闽)JZ安许证字[2018]FZ0383
+	LPName=林文财
+	SLValidTo=2019-05-05 15:50:32
+	PSLValidCode=主要负责人安全生产许可证编号
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	RegCapital=12.34
+	LPJobTitle=工程师
+	ContactEmail=1040482134@qq.com
+	ContactTelPhone=18760005514
+	ContactName=wxh
+	SLValidFrom=2019-05-05 15:50:32
+	FaxCode=传真号码
+
+UpdOrgExtInfo
+	ContactOfficePhone=联系人办公电话
+	LPDuty=工程师
+	OrgRegType=有限责任公司有限责任公司
+	BussLicCode=91350503315776321E
+	LPCodeType=1
+	LPCode=法定代表人证件号码
+	RegCapitalType=1
+	EstablishDate=2019-05-05 15:50:32
+	OrgURL=企业网址
+	PaidInCapital=12.34
+	OrgID=机构UUID
+	Desc=备注
+	SecurityLicCode=(闽)JZ安许证字[2018]FZ0383
+	LPName=法定代表人姓名
+	SLValidTo=2019-05-05 15:50:32
+	PSLValidCode=主要负责人安全生产许可证编号
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	RegCapital=12.34
+	LPJobTitle=法定代表人职称:工程师助理工程师……
+	ContactEmail=联系邮箱
+	ContactTelPhone=联系人手机号码
+	ContactName=联系人姓名
+	SLValidFrom=2019-05-05 15:50:32
+	FaxCode=传真号码
+
+GetOrgQCInfo
+	AllowedQCContent=批准资质资格内容
+	StartIssuingDate=2019-05-05 15:50:32
+	QCSubType=房地产
+	EndFirstAllowQCDate=2019-05-05 15:50:32
+	QCReqType=升级
+	Del=1
+	ProfessionType=房地产
+	QCCFCode=证书编号
+	IssuingAuthority=发证机关
+	EndIssuingDate=2019-05-05 15:50:32
+	FirstAllowQCDocCode=首次批准资质资格文号
+	OrgID=UUID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	QCStatus=资质资格状态
+	EndValidToDate=2019-05-05 15:50:32
+	IsMainQC=1
+	QCType=省外建筑业
+	StartFirstAllowQCDate=2019-05-05 15:50:32
+	QCCFStatus=1
+	QCLevel=特级
+	StartValidToDate=2019-05-05 15:50:32
+
+AddOrgQCInfo
+	AllowedQCContent=批准资质资格内容
+	ValidToDate=2019-05-05 15:50:32
+	FirstAllowQCDate=2019-05-05 15:50:32
+	QCSubType=房地产
+	QCReqType=申请
+	ProfessionType=房地产
+	QCCFCode=证书编号
+	IssuingAuthority=发证机关
+	FirstAllowQCDocCode=首次批准资质资格文号
+	IssuingDate=2019-05-05 15:50:32
+	OrgID=UUID
+	Desc=备注
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	QCStatus=资质资格状态
+	IsMainQC=1
+	QCStatusUpdTime=2019-05-05 15:50:32
+	StatusUpdReason=资质状态变更原因
+	QCType=省外建筑业
+	QCCFStatus=1
+	QCLevel=一级
+
+UpdOrgQCInfo
+	AllowedQCContent=批准资质资格内容
+	ValidToDate=2019-05-05 15:50:32
+	FirstAllowQCDate=2019-05-05 15:50:32
+	QCSubType=房地产
+	QCReqType=申请
+	ProfessionType=建筑防水工程
+	QCCFCode=证书编号
+	IssuingAuthority=发证机关
+	FirstAllowQCDocCode=首次批准资质资格文号
+	IssuingDate=2019-05-05 15:50:32
+	OrgID=UUID
+	Desc=备注
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	QCStatus=资质资格状态
+	IsMainQC=1
+	QCStatusUpdTime=2019-05-05 15:50:32
+	StatusUpdReason=资质状态变更原因
+	QCType=监理勘察
+	QCCFStatus=1
+	QCLevel=暂定
+
+DelOrgQCInfo
+	OrgID=UUID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+GetOrgQCCertInfo
+	StartIssuingDate=2019-05-05 15:50:32
+	TPJobTitle=教授级高工
+	Del=1
+	QCCFCode=证书编号
+	TPPosition=技术总监
+	IssuingAuthority=发证机关
+	EndIssuingDate=2019-05-05 15:50:32
+	OrgID=UUID
+	OPPosition=执行董事
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OPName=企业负责人姓名
+	EndValidToDate=2019-05-05 15:50:32
+	QCCFType=招标代理证
+	ID=1
+	QCCFStatus=1
+	StartValidToDate=2019-05-05 15:50:32
+	OPJobTitle=助理工程师UpdResponsibilityMainBodyInfo
+
+AddOrgQCCertInfo
+	ValidToDate=2019-05-05 15:50:32
+	TPJobTitle=工程师
+	QCCFCode=证书编号
+	TPPosition=技术负责人
+	IssuingAuthority=发证机关
+	IssuingDate=2019-05-05 15:50:32
+	OrgID=UUID
+	Desc=备注
+	OPPosition=董事长
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OPName=企业负责人姓名
+	QCCFType=工程监理证
+	QCCFStatus=1
+	OPJobTitle=工程师
+
+UpdOrgQCCertInfo
+	ValidToDate=2019-05-05 15:50:32
+	TPJobTitle=高级工程师
+	QCCFCode=证书编号
+	TPPosition=经理
+	IssuingAuthority=发证机关
+	IssuingDate=2019-05-05 15:50:32
+	OrgID=UUID
+	Desc=备注
+	OPPosition=总经理
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OPName=企业负责人姓名
+	QCCFType=市批资质证书
+	ID=1
+	QCCFStatus=1
+	OPJobTitle=高级工程师
+
+DelOrgQCCertInfo
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ID=1
+
+GetOrgPersonInfo
+	Nation=民族
+	Sex=1
+	TelPhone=手机号码
+	CertType=1
+	Del=1
+	Name=姓名
+	OrgID=机构ID
+	StartGraduationTime=2019-05-05 15:50:32
+	School=毕业学校
+	Major=专业
+	EndGraduationTime=2019-05-05 15:50:32
+	Education=大专
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ID=主键ID
+	CertCode=证件号码
+
+AddOrgPersonInfo
+	Nation=民族
+	OrgID=机构ID
+	School=毕业学校
+	Major=专业
+	Education=本科
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	Sex=1
+	TelPhone=手机号码
+	CertType=1
+	GraduationTime=2019-05-05 15:50:32
+	CertCode=证件号码
+	Name=姓名
+
+UpdOrgPersonInfo
+	Nation=民族
+	Sex=1
+	TelPhone=手机号码
+	CertType=1
+	GraduationTime=2019-05-05 15:50:32
+	Name=姓名
+	OrgID=机构ID
+	School=毕业学校
+	Major=专业
+	Education=硕士
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ID=主键
+	CertCode=证件号码
+
+DelOrgPersonInfo
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ID=主键
+
+GetOrgKeyPersonInfo
+	MngYears=1
+	OrgID=机构ID
+	ApproveStatus=1
+	SPECertCode=闽建安A（2019）1000582
+	PersonID=人员信息UUID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	Duty=职工
+	Title=职称
+	Del=1
+	IsLock=1
+
+AddOrgKeyPersonInfo
+	MngYears=1
+	OrgID=机构ID
+	ApproveStatus=1
+	SPECertCode=闽建安A（2019）1000582
+	PersonID=人员信息UUID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	Duty=法定代表人
+	Title=职称
+	IsLock=1
+
+UpdOrgKeyPersonInfo
+	MngYears=1
+	OrgID=机构ID
+	ApproveStatus=1
+	SPECertCode=1
+	PersonID=人员信息UUID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	Duty=法定代表人
+	Title=职称
+	ID=主键
+	IsLock=1
+
+DelOrgKeyPersonInfo
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ID=主键
+
+GetOrgRegPersonInfo
+	Status=1
+	StartIssuingDate=2019-05-05 15:50:32
+	RegType=建筑师
+	StartRegValidDate=2019-05-05 15:50:32
+	RegLevel=1
+	Del=1
+	RegSealCode=注册印章号
+	IssuingAuthority=发证机关
+	EndIssuingDate=2019-05-05 15:50:32
+	OrgID=机构ID
+	PersonID=人员信息UUID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	RegCertCode=注册证书编号
+	EndRegValidDate=2019-05-05 15:50:32
+	ID=主键
+
+AddOrgRegPersonInfo
+	Status=1
+	OrgID=机构ID
+	PersonID=人员信息UUID
+	RegType=城市规划师
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	RegLevel=1
+	RegCertCode=注册证书编号
+	RegValidDate=2019-05-05 15:50:32
+	RegSealCode=注册印章号
+	IssuingAuthority=发证机关
+	IssuingDate=2019-05-05 15:50:32
+
+UpdOrgRegPersonInfo
+	Status=1
+	OrgID=机构ID
+	PersonID=人员信息UUID
+	RegType=结构工程师
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	RegLevel=1
+	RegCertCode=注册证书编号
+	RegValidDate=2019-05-05 15:50:32
+	ID=主键
+	RegSealCode=注册印章号
+	IssuingAuthority=发证机关
+	IssuingDate=2019-05-05 15:50:32
+
+DelOrgRegPersonInfo
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ID=主键
+
+GetOrgEmployeeInfo
+	Status=1
+	StartIssuingDate=2019-05-05 15:50:32
+	StartRegValidDate=2019-05-05 15:50:32
+	CertType=设备安装施工员
+	Del=1
+	IssuingAuthority=发证机关
+	EndIssuingDate=2019-05-05 15:50:32
+	OrgID=机构ID
+	StartUnRegDate=2019-05-05 15:50:32
+	PersonID=人员信息UUID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	EndRegValidDate=2019-05-05 15:50:32
+	EndUnRegDate=2019-05-05 15:50:32
+	ID=主键
+	CertCode=证书编号
+
+AddOrgEmployeeInfo
+	Status=1
+	OrgID=机构ID
+	PersonID=人员信息UUID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	UnRegDate=2019-05-05 15:50:32
+	CertType=设备安装施工员
+	RegValidDate=2019-05-05 15:50:32
+	IssuingAuthority=发证机关
+	CertCode=证书编号
+	IssuingDate=2019-05-05 15:50:32
+
+UpdOrgEmployeeInfo
+	Status=1
+	OrgID=机构ID
+	PersonID=人员信息UUID
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	UnRegDate=2019-05-05 15:50:32
+	CertType=安装施工员
+	RegValidDate=2019-05-05 15:50:32
+	ID=主键
+	IssuingAuthority=发证机关
+	CertCode=证书编号
+	IssuingDate=2019-05-05 15:50:32
+
+DelOrgEmployeeInfo
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ID=主键
+
+GetProjectInfo
+	dcPK=项目主键
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=2019-04-09 16:56:58,2019-04-10 16:56:58
+	status=1
+
+GetResponsibilityMainBodyInfo
+	OrgCode=单位机构代码
+	LPName=法人代表
+	ProID=项目主键
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OrgType=1001
+	OrgName=单位名称
+	ID=
+	PTelPhone=项目负责人电话
+	Principal=项目负责人
+
+AddResponsibilityMainBodyInfo
+	ArchitectIDCode=项目注册建筑师证件号码
+	EngineerIDCode=项目注册结构师证件号码
+	ArchitectRegLevel=1
+	OrgLevel=单位资质等级
+	OrgName=单位名称
+	OrgCertCode=单位资质证书号
+	WinNoteCode=施工中标通知编号
+	BuildScale=建设规模
+	IDType=1
+	ArchitectName=项目注册建筑师姓名
+	ArchitectIDType=1
+	Way=1
+	LPName=法人代表
+	IsSplitOther=1
+	EngineerRegLevel=1
+	WinDate=2019-05-05 15:50:32
+	ArchitectRegCode=项目注册建筑师执业资格证书号
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	IDCode=项目负责人证件号码
+	PhotoURL=项目施工负责人（项目经理）电子照片
+	WinOrgName=中标单位名称
+	IsUnion=1
+	RegType=项目负责人（项目经理）资格类型
+	RegCode=项目负责人（项目经理）执业资格证书号
+	EngineerName=项目注册结构师姓名
+	RegLevel=1
+	EngineerRegType=项目注册结构师资格类型
+	WinPrice=12.34
+	SPCertCode=项目负责人（项目经理）安全生产考核合格证书编号
+	OrgCode=单位机构代码
+	HasSubContractor=1
+	Type=1
+	ProID=项目主键
+	OrgType=1001
+	IsUnifyOther=1
+	ArchitectRegType=项目注册建筑师资格类型
+	EngineerIDType=1
+	PTelPhone=项目负责人电话
+	Principal=项目负责人
+	EngineerRegCode=项目注册结构师执业资格证书号
+	AllArea=12.34
+
+UpdResponsibilityMainBodyInfo
+	ArchitectIDCode=项目注册建筑师证件号码
+	EngineerIDCode=项目注册结构师证件号码
+	ArchitectRegLevel=1
+	OrgLevel=单位资质等级
+	OrgName=单位名称
+	OrgCertCode=单位资质证书号
+	WinNoteCode=施工中标通知编号
+	BuildScale=建设规模
+	IDType=1
+	ArchitectName=项目注册建筑师姓名
+	ArchitectIDType=1
+	Way=1
+	LPName=法人代表
+	IsSplitOther=1
+	EngineerRegLevel=1
+	WinDate=2019-05-05 15:50:32
+	ArchitectRegCode=项目注册建筑师执业资格证书号
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	IDCode=项目负责人证件号码
+	ID=e797d0928b5547229f2a049ece3ea35f
+	PhotoURL=项目施工负责人（项目经理）电子照片
+	WinOrgName=中标单位名称
+	IsUnion=1
+	RegType=项目负责人（项目经理）资格类型
+	RegCode=项目负责人（项目经理）执业资格证书号
+	EngineerName=项目注册结构师姓名
+	RegLevel=1
+	EngineerRegType=项目注册结构师资格类型
+	WinPrice=12.34
+	SPCertCode=项目负责人（项目经理）安全生产考核合格证书编号
+	OrgCode=单位机构代码
+	HasSubContractor=1
+	Type=1
+	ProID=项目主键
+	OrgType=1002
+	IsUnifyOther=1
+	ArchitectRegType=项目注册建筑师资格类型
+	EngineerIDType=1
+	PTelPhone=项目负责人电话
+	Principal=项目负责人
+	EngineerRegCode=项目注册结构师执业资格证书号
+	AllArea=12.34
+
+DelResponsibilityMainBodyInfo
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OrgType=1
+	ID=主键
+
+GetRMBAssistInfo
+	Status=1
+	AssistType=专业负责人
+	RMBID=责任主体主键
+	RegType=注册类型
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OrgType=1
+	RegLevel=1
+	IDCode=证件号码
+	ID=主键
+	IDType=1
+	Name=姓名
+
+AddRMBAssistInfo
+	AssistType=专业负责人
+	RMBID=责任主体主键
+	RegType=注册类型
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OrgType=1
+	RegLevel=1
+	IDCode=证件号码
+	IDType=1
+	Name=姓名
+
+UpdRMBAssistInfo
+	AssistType=主要设计人）
+	RMBID=责任主体主键
+	RegType=注册类型
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	OrgType=1
+	RegLevel=1
+	IDCode=证件号码
+	ID=主键
+	IDType=1
+	Name=姓名
+
+DelRMBAssistInfo
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ID=主键
+
+GetSubProjectInfo
+	dcPK=项目主键
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=2019-04-09 16:56:58,2019-04-10 16:56:58
+	status=1
+
+AddSubProjectInfo
+	SrchArea=12.34
+	ItemCode=单位工程编号
+	SingleProType=单位工程类别
+	StructDwfloorArea=12.34
+	PitDepth=12.34
+	StructType=结构质式
+	AntiKnockLevel=结构抗震等级
+	SrchHeight=12.34
+	SingleProName=单位工程名称
+	FromAppID=最后一次更新的来源appid
+	ItemID=单位工程ID
+	InfraStructLevel=基础建设等级
+	ProtectPitMethod=基坑支护方法
+	ProID=项目主键
+	StructDwfloorNum=1
+	StructSpan=12.34
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	StructUpfloorArea=12.34
+	StructUpfloorNum=1
+	ProtectSlopeMethod=高边坡支护方法
+	FireLevel=耐火等级
+	SlopeHigh=12.34
+
+UpdSubProjectInfo
+	SrchArea=12.34
+	ItemCode=单位工程编号
+	SingleProType=单位工程类别
+	StructDwfloorArea=12.34
+	PitDepth=12.34
+	StructType=结构质式
+	AntiKnockLevel=结构抗震等级
+	SrchHeight=12.34
+	SingleProName=单位工程名称
+	FromAppID=最后一次更新的来源appid
+	ItemID=单位工程ID
+	InfraStructLevel=基础建设等级
+	ProtectPitMethod=基坑支护方法
+	ProID=项目主键
+	StructDwfloorNum=1
+	StructSpan=12.34
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	StructUpfloorArea=12.34
+	ID=主键
+	StructUpfloorNum=1
+	ProtectSlopeMethod=高边坡支护方法
+	FireLevel=耐火等级
+	SlopeHigh=12.34
+
+DelSubProjectInfo
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ID=主键
+
+GetProCompleteMeetingInfo
+	ContactPhone=联系电话
+	ProID=项目主键
+	MeetingAddr=会议地点
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	EndMeetingTime=2019-05-05 15:50:32
+	StartMeetingTime=2019-05-05 15:50:32
+	ContactName=联系人
+	FlowStatus=流程状态：待审核已审核
+
+GetProCompleteRegInfo
+	StartRealStartDate=2019-05-05 15:50:32
+	Status=1
+	RealScale=实际建设规模
+	EndRealEndCheckDate=2019-05-05 15:50:32
+	StartReportDate=2019-05-05 15:50:32
+	Reason=申请理由
+	EndRequestTime=2019-05-05 15:50:32
+	FlowStatus=状态：待审核已审核
+	Desc=备注
+	ReferItem=竣工涉及的申报项
+	StartRealEndCheckDate=2019-05-05 15:50:32
+	ProID=项目主键
+	StartRequestTime=2019-05-05 15:50:32
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	EndReportDate=2019-05-05 15:50:32
+	EndRealStartDate=2019-05-05 15:50:32
+
+GetProjectInstallInfo
+	dcPK=主键
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=2019-04-09 16:56:58,2019-04-10 16:56:58
+	status=1
+
+GetProjectInstallDevInfo
+	EndDevDateStartUse=2019-05-05 15:50:32
+	Status=1:新增，2:更新，4：删除
+	DevName=设备名称
+	DevType=1
+	FromAppID=最后一次更新的来源appid
+	ServiceOperator=1
+	DevInstallPlace=设备安装地址
+	StartDevDateStartUse=2019-05-05 15:50:32
+	ProID=项目主键
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	StartDevDateUninstall=2019-05-05 15:50:32
+	ID=主键
+	EndDevDateUninstall=2019-05-05 15:50:32
+	DevID=设备主键
+	DevUnitType=设备型号
+
+GetProjectMaintainInfo
+	dcPK=主键
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=2019-04-09 16:56:58,2019-04-10 16:56:58
+	status=1
+
+GetProjectPauseInfo
+	dcPK=主键
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=2019-04-09 16:56:58,2019-04-10 16:56:58
+	status=1
+
+GetProjectRecoverInfo
+	dcPK=主键
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=2019-04-09 16:56:58,2019-04-10 16:56:58
+	status=1
+
+GetProjectRemoveInfo
+	dcPK=主键
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	appId=用户最后一次更新的来源appid
+	proID=项目主键
+	updateTime=2019-04-09 16:56:58,2019-04-10 16:56:58
+	status=1
+
+GetAppAuthInfo
+	DestUserID=fc3710665a9f11e9b036f832e4702fe0
+	AppID=appid
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+AddAppAuthInfo
+	Secret=授权码
+	DestUserID=fc3710665a9f11e9b036f832e4702fe0
+	AppID=appid
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+UpdAppAuthInfo
+	Secret=授权码
+	DestUserID=fc3710665a9f11e9b036f832e4702fe0
+	AppID=appid
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+DelAppAuthInfo
+	AppID=appid
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+
+GetVideoViewAddr
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	ServiceOperator=1
+
+SetVideoViewAddr
+	UserID=fc3710665a9f11e9b036f832e4702fe0
+	BaseURL=视频查看地址
+	ServiceOperator=1

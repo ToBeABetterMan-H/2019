@@ -1,0 +1,137 @@
+AddForm
+	FormData=表单定义数据字符串的形式“[{\“id\”:\”\”,      //key固定\“value\”:\”\”,   //key固定\“req\”:\”\”,     //key固定，表示该属性是否是流程引擎必须使用，如：\”true\”,\”false\”\“name\”:\”\”,     //key固定，表示属性的名称}    //表示一个业务属性…{}]”
+	Status=1
+	UserID=当前用户UUID
+	FormName=表单名称
+
+GetForm
+	Status=1
+	UserID=当前用户UUID
+	FormID=1
+	FormName=表单名称
+
+EditForm
+	FormData=表单定义数据[{“id”:””,      //key固定“value”:””,   //key固定“req”:””,     //key固定，表示该属性是否是流程引擎必须使用，如：”true”,”false”“name”:””,     //key固定，表示属性的名称}    //表示一个业务属性…{}]
+	Status=1
+	UserID=当前用户UUID
+	FormID=1
+	FormName=表单名称
+
+DelForm
+	UserID=当前用户UUID
+	FormID=1
+
+CreateProcess
+	Status=1
+	ActivityList=活动ID列表
+	ProcessName=流程名称
+	UserID=当前用户UUID
+	XML=流程定义BPMN数据
+	FormID=1
+
+PublishProcess
+	DBPID=1
+	FormData=表单的属性，用于创建流程实例数据表：    "FormData": {        "ProID": {            "Type": "VARCHAR(64)"        },   ...}
+	UserID=当前用户UUID
+
+GetProcess
+	DBPID=1
+	Status=1
+	ProcessName=流程名称
+	UserID=当前用户UUID
+
+EditProcess
+	DBPID=1
+	Status=1
+	ActivityList=活动ID列表
+	ProcessName=流程名称
+	UserID=当前用户UUID
+	XML=流程定义BPMN数据
+	FormID=1
+
+DelProcess
+	DBPID=1
+	UserID=当前用户UUID
+
+AddActivityDefExt
+	DBPID=1
+	RollBackStatus=退回状态：BTApplyProjectBTApplyProjectCompleteMeetingBTApplyProjectCompleteRegist
+	UserID=当前用户UUID
+	ActivityID=活动ID;退回业务表示退回到的活动ID;角色关联业务表示关联的活动ID 
+
+UpdActivityDefExt
+	DBPID=1
+	RollBackStatus=退回状态：BTApplyProjectBTApplyProjectCompleteMeetingBTApplyProjectCompleteRegist
+	UserID=当前用户UUID
+	ActivityID=活动ID;退回业务表示退回到的活动ID;角色关联业务表示关联的活动ID 
+	ID=1
+
+DelActivityDefExt
+	UserID=当前用户UUID
+	ID=1
+
+GetActivityDefExt
+	DBPID=1
+	RollBackStatus=退回状态：BTApplyProjectBTApplyProjectCompleteMeetingBTApplyProjectCompleteRegist
+	ActivityInstID=活动实例ID
+	UserID=当前用户UUID
+	ActivityID=活动ID;退回业务表示退回到的活动ID;角色关联业务表示关联的活动ID 
+	Del=1
+	ID=1
+
+ActivityRefRole
+	DBPID=1
+	UserID=当前用户UUID
+	ActivityID=活动ID
+	RoleID=重新关联角色ID半角逗号间隔（之前的关联记录直接删除）
+
+getActivityRefRole
+	DBPID=1
+	UserID=当前用户UUID
+	ActivityID=活动ID
+
+StartProcessInstance
+	UserID=当前用户UUID
+	ProcessID=1
+
+ImplementProcessInsTask
+	Draft=1
+	ActivityInstID=活动实例ID
+	UserID=当前用户UUID
+	BussIF=业务实现接口
+	ProcessInstID=流程实例ID
+	WFFormData=流程执行所需的属性ID和对应的值{id:value,id:value,…}
+	BussFormData=业务执行所需的属性ID和对应的值{id:value,id:value,…}
+
+RevokeProcessInstTask
+	RollBackStatus=回滚到指定的状态
+	ActivityInstID=撤销到该活动实例ID
+	UserID=当前用户UUID
+
+SendBackProcessInstTask
+	RollBackStatus=退回的状态
+	ActivityInstID=撤销到该活动实例ID
+	UserID=当前用户UUID
+	Reason=退回理由
+
+GetActivityInstList
+	Type=1
+	ActivityInstID=活动实例ID
+	UserID=当前用户UUID
+	SearchMsg=搜索使用的业务属性
+	ActivityID=活动ID
+	ProcInstID=流程实例ID
+	ProcessID=ACTIVITY流程ID
+	IDList=业务属性ID列表属性ID半角逗号间隔
+
+ClaimProcessActivity
+	ActivityInstID=活动实例ID
+	DestUserID=签收填当前用户UUID,委派指定用户UUID
+	UserID=当前用户UUID
+
+GetProcessInstList
+	Type=1
+	UserID=当前用户UUID
+	ProcInstID=流程实例ID
+	ProcessID=1
+	IsFinish=流程实例是否结束0:未结束1:已结束
